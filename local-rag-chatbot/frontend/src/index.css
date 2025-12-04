@@ -1,0 +1,17 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make app stretch full screen */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Body default font */
+body {
+  font-family: system-ui, sans-serif;
+}

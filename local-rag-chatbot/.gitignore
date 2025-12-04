@@ -1,0 +1,95 @@
+# ---------------------------------------------------------
+# Global
+# ---------------------------------------------------------
+.DS_Store
+*.log
+*.tmp
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example
+
+# ---------------------------------------------------------
+# Python (Backend)
+# ---------------------------------------------------------
+venv/
+*.egg-info/
+*.egg
+*.sqlite3
+
+# Cache
+.pytest_cache/
+.coverage
+.cache/
+.mypy_cache/
+pip-wheel-metadata/
+
+# FastAPI / Uvicorn
+uvicorn.log
+
+# Chroma / Vector DB
+chroma_db/
+chroma/
+index/
+*.bin
+
+# Ollama (don’t track local models)
+ollama/
+*.gguf
+*.pt
+
+# ---------------------------------------------------------
+# Node / React / Vite (Frontend)
+# ---------------------------------------------------------
+node_modules/
+dist/
+build/
+.cache/
+.expo/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+vite.svg
+.vite/
+
+# Production output
+*.local
+
+# ---------------------------------------------------------
+# OS generated files
+# ---------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------------------------------------------------------
+# Editor / IDE
+# ---------------------------------------------------------
+.vscode/
+.vscode/**/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+.idea/
+*.swp
+
+# ---------------------------------------------------------
+# Temporary / Misc
+# ---------------------------------------------------------
+tmp/
+temp/
+uploads/
+__generated__/
+*.bak
+*.old

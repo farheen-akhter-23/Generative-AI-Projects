@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Sleep",
+    "start_time": "21:30",
+    "duration_minutes": 420,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Study Java",
+    "start_time": "04:30",
+    "duration_minutes": 90,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Tafseer + Hifz",
+    "start_time": "06:00",
+    "duration_minutes": 60,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Breakfast",
+    "start_time": "07:30",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Workout",
+    "start_time": "08:00",
+    "duration_minutes": 60,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Post project update",
+    "start_time": "09:30",
+    "duration_minutes": 15,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Do Projects (Weekdays)",
+    "start_time": "10:00",
+    "duration_minutes": 120,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+  },
+  {
+    "name": "Apply PhD + Canada WP (Weekend)",
+    "start_time": "10:00",
+    "duration_minutes": 120,
+    "days": ["Sat", "Sun"]
+  },
+  {
+    "name": "Study AI/ML Concepts",
+    "start_time": "12:00",
+    "duration_minutes": 90,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Lunch",
+    "start_time": "13:30",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Read Book",
+    "start_time": "15:00",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Apply PhD + Canada WP (Friday)",
+    "start_time": "16:00",
+    "duration_minutes": 60,
+    "days": ["Fri"]
+  },
+  {
+    "name": "Search Part Time",
+    "start_time": "17:00",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Apply for jobs",
+    "start_time": "18:00",
+    "duration_minutes": 60,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Dinner",
+    "start_time": "19:00",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  {
+    "name": "Read Quran",
+    "start_time": "20:00",
+    "duration_minutes": 30,
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  }
+]
