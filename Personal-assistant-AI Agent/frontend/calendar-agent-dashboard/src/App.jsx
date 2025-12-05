@@ -92,7 +92,7 @@ function App() {
         command: llmCommand,
       });
       setLlmResult(res.data);
-      setLlmCommand("");
+      setLlmCommand(""); // clear textarea
       await fetchTodayPlan();
     } catch (err) {
       console.error(err);
@@ -101,17 +101,18 @@ function App() {
   };
 
   const statusColor = (status) => {
-    if (status === "scheduled") return "#16a34a"; // green
-    if (status === "scheduled_rescheduled") return "#ea580c"; // orange
+    if (status === "scheduled") return "#15803d"; // green
+    if (status === "scheduled_rescheduled") return "#c2410c"; // orange
     if (status === "skipped") return "#b91c1c"; // red
     return "#374151";
   };
 
   return (
     <div style={styles.app}>
-      <header style={styles.header}>
-        <h1 style={{ margin: 0 }}>AI Calendar Agent Dashboard</h1>
-        <p style={{ margin: 0, marginTop: "0.5rem", color: "#6b7280" }}>
+      <div style={styles.container}>
+     <header style={styles.header}>
+        <h1 style={styles.title}>AI Calendar Agent Dashboard</h1>
+        <p style={styles.subtitle}>
           Autonomous routine scheduling • Conflict-aware • LLM-controlled
         </p>
       </header>
@@ -122,7 +123,7 @@ function App() {
         {/* LEFT: controls */}
         <section style={styles.leftColumn}>
           <div style={styles.card}>
-            <h2>Controls</h2>
+            <h2 style={styles.cardTitle}>Controls</h2>
             <p style={styles.helpText}>
               Trigger your agent to schedule or clear your routine.
             </p>
@@ -154,10 +155,8 @@ function App() {
           </div>
 
           <div style={styles.card}>
-            <h2>Natural-language Command</h2>
-            <p style={styles.helpText}>
-              Let the LLM decide what to do. Try:
-            </p>
+            <h2 style={styles.cardTitle}>Natural-language Command</h2>
+            <p style={styles.helpText}>Let the LLM decide what to do. Try:</p>
             <ul style={styles.exampleList}>
               <li>"schedule my routine for the next 5 days"</li>
               <li>"clear the next 7 days"</li>
@@ -179,13 +178,13 @@ function App() {
           </div>
 
           <div style={styles.card}>
-            <h2>Configured Tasks</h2>
+            <h2 style={styles.cardTitle}>Configured Tasks</h2>
             <p style={styles.helpText}>Loaded from daily_fixed_tasks.json</p>
             <ul style={styles.taskList}>
               {tasks.map((t) => (
-                <li key={t.name} style={{ marginBottom: "0.25rem" }}>
-                  <strong>{t.name}</strong> — {t.start_time} ({t.duration_minutes} min) ·{" "}
-                  {t.days.join(", ")}
+                <li key={t.name} style={styles.taskItem}>
+                  <strong>{t.name}</strong> — {t.start_time} ({t.duration_minutes}{" "}
+                  min) · {t.days.join(", ")}
                 </li>
               ))}
               {tasks.length === 0 && <li>No tasks loaded.</li>}
@@ -197,7 +196,7 @@ function App() {
         <section style={styles.rightColumn}>
           <div style={styles.card}>
             <div style={styles.cardHeaderRow}>
-              <h2>Today&apos;s Plan</h2>
+              <h2 style={styles.cardTitle}>Today&apos;s Plan</h2>
               <button
                 style={styles.smallButton}
                 onClick={fetchTodayPlan}
@@ -209,45 +208,57 @@ function App() {
             {todayPlan ? (
               <>
                 <p style={styles.helpText}>Date: {todayPlan.date}</p>
-                <table style={styles.table}>
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th>Status</th>
-                      <th>Start</th>
-                      <th>End</th>
-                      <th>Reason</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {todayPlan.decisions.map((d, idx) => (
-                      <tr key={idx}>
-                        <td>{d.task_name}</td>
-                        <td style={{ color: statusColor(d.status) }}>{d.status}</td>
-                        <td>{d.scheduled_start || "-"}</td>
-                        <td>{d.scheduled_end || "-"}</td>
-                        <td>{d.reason || ""}</td>
-                      </tr>
-                    ))}
-                    {todayPlan.decisions.length === 0 && (
+                <div style={{ overflowX: "auto" }}>
+                  <table style={styles.table}>
+                    <thead>
                       <tr>
-                        <td colSpan={5} style={{ textAlign: "center", color: "#6b7280" }}>
-                          No tasks scheduled for today (maybe your routine skips this day).
-                        </td>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Reason</th>
                       </tr>
-                    )}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {todayPlan.decisions.map((d, idx) => (
+                        <tr key={idx}>
+                          <td>{d.task_name}</td>
+                          <td style={{ color: statusColor(d.status) }}>
+                            {d.status}
+                          </td>
+                          <td>{d.scheduled_start || "-"}</td>
+                          <td>{d.scheduled_end || "-"}</td>
+                          <td>{d.reason || ""}</td>
+                        </tr>
+                      ))}
+                      {todayPlan.decisions.length === 0 && (
+                        <tr>
+                          <td
+                            colSpan={5}
+                            style={{
+                              textAlign: "center",
+                              color: "#6b7280",
+                              padding: "0.5rem",
+                            }}
+                          >
+                            No tasks scheduled for today (maybe your routine
+                            skips this day).
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </>
             ) : (
-              <p>Loading today&apos;s plan...</p>
+              <p style={styles.helpText}>Loading today&apos;s plan...</p>
             )}
           </div>
 
           <div style={styles.card}>
-            <h2>Last Agent Response</h2>
+            <h2 style={styles.cardTitle}>Last Agent Response</h2>
             <p style={styles.helpText}>
-              Raw JSON from API's
+              Raw JSON from /schedule, /clear, or /command_llm
             </p>
             <pre style={styles.pre}>
               {llmResult ? JSON.stringify(llmResult, null, 2) : "No actions yet."}
@@ -255,27 +266,46 @@ function App() {
           </div>
         </section>
       </main>
+      </div>
+     
     </div>
   );
 }
 
-
-// ---------- Inline styles (sleek, minimal) ----------
+// ---------- Styles ----------
 
 const styles = {
   app: {
     minHeight: "100vh",
-    backgroundColor: "#f3f4f6",
-    padding: "1.5rem",
+      margin: "0 auto",
+    backgroundColor: "#f9fafb",
+    padding: "1.5rem 2rem",
+    color: "#111827",
     fontFamily:
       "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
+  container: {
+  maxWidth: "1200px",      // controls total width of the app
+  margin: "0 auto",        // centers the entire UI
+},
   header: {
     marginBottom: "1.5rem",
   },
+  title: {
+    margin: 0,
+    fontSize: "1.8rem",
+    fontWeight: 700,
+    color: "#111827",
+  },
+  subtitle: {
+    margin: 0,
+    marginTop: "0.4rem",
+    color: "#6b7280",
+    fontSize: "0.95rem",
+  },
   main: {
     display: "grid",
-    gridTemplateColumns: "1.1fr 1.3fr",
+    gridTemplateColumns: "1.05fr 1.35fr",
     gap: "1.5rem",
     alignItems: "flex-start",
   },
@@ -293,7 +323,14 @@ const styles = {
     backgroundColor: "#ffffff",
     borderRadius: "0.75rem",
     padding: "1rem 1.25rem",
-    boxShadow: "0 10px 15px -3px rgba(15, 23, 42, 0.08)",
+    boxShadow: "0 10px 15px -3px rgba(15, 23, 42, 0.06)",
+    border: "1px solid #e5e7eb",
+  },
+  cardTitle: {
+    margin: 0,
+    fontSize: "1.05rem",
+    fontWeight: 600,
+    color: "#111827",
   },
   cardHeaderRow: {
     display: "flex",
@@ -302,9 +339,10 @@ const styles = {
     marginBottom: "0.5rem",
   },
   helpText: {
-    fontSize: "0.875rem",
+    fontSize: "0.85rem",
     color: "#6b7280",
     marginBottom: "0.75rem",
+    marginTop: "0.4rem",
   },
   buttonRow: {
     display: "flex",
@@ -319,7 +357,7 @@ const styles = {
     borderRadius: "9999px",
     padding: "0.5rem 1rem",
     cursor: "pointer",
-    fontSize: "0.9rem",
+    fontSize: "0.88rem",
   },
   secondaryButton: {
     backgroundColor: "#0f766e",
@@ -328,7 +366,7 @@ const styles = {
     borderRadius: "9999px",
     padding: "0.5rem 1rem",
     cursor: "pointer",
-    fontSize: "0.9rem",
+    fontSize: "0.88rem",
   },
   dangerButton: {
     backgroundColor: "#b91c1c",
@@ -337,16 +375,16 @@ const styles = {
     borderRadius: "9999px",
     padding: "0.5rem 1rem",
     cursor: "pointer",
-    fontSize: "0.9rem",
+    fontSize: "0.88rem",
   },
   smallButton: {
     backgroundColor: "#e5e7eb",
     color: "#374151",
-    border: "none",
+    border: "1px solid #d1d5db",
     borderRadius: "9999px",
     padding: "0.25rem 0.75rem",
     cursor: "pointer",
-    fontSize: "0.8rem",
+    fontSize: "0.78rem",
   },
   textarea: {
     width: "100%",
@@ -356,6 +394,7 @@ const styles = {
     marginBottom: "0.5rem",
     fontFamily: "inherit",
     fontSize: "0.9rem",
+    resize: "vertical",
   },
   taskList: {
     listStyle: "none",
@@ -364,19 +403,26 @@ const styles = {
     overflowY: "auto",
     margin: 0,
   },
+  taskItem: {
+    marginBottom: "0.25rem",
+    fontSize: "0.85rem",
+    color: "#111827",
+  },
   table: {
     width: "100%",
     borderCollapse: "collapse",
-    fontSize: "0.85rem",
+    fontSize: "0.82rem",
+    border: "1px solid #e5e7eb",
   },
   pre: {
-    backgroundColor: "#0f172a",
-    color: "#e5e7eb",
+    backgroundColor: "#f3f4f6",
+    color: "#111827",
     padding: "0.75rem",
     borderRadius: "0.5rem",
     maxHeight: "260px",
     overflow: "auto",
     fontSize: "0.8rem",
+    border: "1px solid #e5e7eb",
   },
   error: {
     backgroundColor: "#fee2e2",
@@ -385,6 +431,7 @@ const styles = {
     borderRadius: "0.5rem",
     marginBottom: "1rem",
     border: "1px solid #fecaca",
+    fontSize: "0.9rem",
   },
   exampleList: {
     fontSize: "0.8rem",

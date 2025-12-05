@@ -9,7 +9,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-# 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
+
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 TIMEZONE = "America/Los_Angeles"
 CALENDAR_ID = "primary"  # you can later swap to a separate demo calendar

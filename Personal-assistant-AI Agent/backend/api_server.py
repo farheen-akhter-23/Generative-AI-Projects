@@ -5,6 +5,10 @@ from typing import Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import os
+import json
+
+from openai import OpenAI
 
 from agent_core import (
     get_calendar_service,
@@ -13,21 +17,15 @@ from agent_core import (
     schedule_range,
     clear_agent_events,
 )
-import os
-import json
-
-from openai import OpenAI
-
 
 # ---------- INIT ----------
-OPENAI_API_KEY = os.environ.get("OPEN_AI_KEY")
-llm_client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 app = FastAPI(title="AI Calendar Agent Backend")
 
 # CORS so React (later) can call this
 origins = [
     "http://localhost:3000",
+    "http://localhost:5173",
     "http://localhost:5174",
 ]
 
@@ -57,6 +55,8 @@ class ClearRequest(BaseModel):
 
 class CommandRequest(BaseModel):
     command: str
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+llm_client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 # ---------- HELPERS ----------
 
@@ -64,7 +64,6 @@ def parse_date_or_today(date_str: Optional[str]) -> datetime.date:
     if date_str:
         return datetime.date.fromisoformat(date_str)
     return datetime.date.today()
-
 # ---------- LLM ROUTER ----------
 
 LLM_ROUTER_SYSTEM_PROMPT = """
@@ -201,6 +200,7 @@ def execute_llm_action(spec: dict) -> dict:
         "raw_spec": spec,
     }
 
+
 # ---------- ENDPOINTS ----------
 
 @app.get("/tasks")
@@ -256,7 +256,6 @@ def clear(req: ClearRequest):
         "days": req.days,
         "deleted": deleted,
     }
-
 @app.post("/command_llm")
 def command_llm(req: CommandRequest):
     """
