@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ai-scheduler-agent-480118",
+  "private_key_id": "8f212b0b81c054bf66a11a34644bec1fe0b5a209",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC707NgffD3ptaB\nfLglPIpnS7JvaCYPP7yeeK/42N1w857zomoWBVXGfRc8MV5plJ9wurv8gH+tqa1y\nJbYSpBSZxgSIBOO5h3ZX90pbSkXDBnecNKAjh/WxD1FtWFI56Uv0mbtmqXP2poPn\npFZPMvqG9g5rrqT+cS7Hv7AYBWI61cyCwLbcHZZZn0exqzQngXQwCvyTFsTVMF0W\nZQ8Wkyo2BnY+xfUDNDEE7a4V2KCR6dDQZZynJQRuVsZHpNf2WghX0Qv1gqWJ6GSX\nnOBTQ5+9Dr9+HSiJnWF+SLj6vkyPj/6Pq6IbpqKx6E+fakxqhoFXVmlpt5WAJqdJ\nQ5AzShvRAgMBAAECggEAHz0ylFXeAhKJkre/mNHc4xk/8C+ORPMA2AqSmfzXt7WN\nNlBI/Kief4jGmIhNf5nser9UDMcCdUvHQTjsc2U+1+SLVGQby/uvvymuAEj2GV21\n/xDxoXc3cd9uV5Vc96zJqUD4XjbIxrkjLx+yCzIbYN8Dvv0pC/ifIzHKg/RBRi+H\nkDboHqfiSB/VcFilna0kQxmKEkAuC9lE6+vjsJo1yPeTVzXj5GUSJkQc1ajYErir\nprxi7u3lJqci3Df1eypz7ZcSHIzwUJHO2VblRSIjSt08MYjd8cRYMHQlsIWxCFyj\nBgLEo3ybnUqDsMVshrfhlRwQ1EvLftT4DFt064sgwQKBgQD1dX4h4p8HUVaVApOu\nyQrYdviOfTZTFIaPgnt1LwxspzMzPWcPmA0vjavOd0e1y1/plk3+EPMctymvUH5f\n1PTjxqZrxQhpGg2dgRNxvVn8G7ccE1Xh/vBayCHGXjvqGQbaHWgn97Tz4Y0YRofe\nUKJnptWU4n5umDcTl4Fu3h8CvQKBgQDD5J4roCcS7k40OtU+YtBfx8dvN7ztGgVh\nm2i3xHCzhm6jtAZrzNUessPqGYAneWR1GQXTHjUw+s9MDzpYfdamTdTcar7jt6wx\n1FvOsMt5DLWC8OgrJFDqCiGK4WKwS5BL71su1mkDmgGR1T3O3HECvl5OjeDxS7HJ\nlm6VSMQ4pQKBgQCp0lYn34CjMXUztwqyHMnyJa2l959EL6lBVMdRtfFkovFbfBn3\nwf0tb1j0ibYFYuXC2IixRMzOizK95nTonI+pn2C4oyNEhA/zbsAjKxw8vngbZo0+\nxIFKbbhgZAYT2qjQ8xOCw3BgYyaZKwMJnsQd7mFKlsFehtVkKqgUKn1OCQKBgBVX\nfvP5ysgBNnvyPPFDCrikp1GynN6oCxYLPGlo+W5VoxAquNhdxIpHp5iFlrS2QP+Q\n7lWF4P2pFZSPxCeH7i7II/yvlIRyqkvzet0V3dUeUVgmruSkXDxjRiw/SeUzFlFv\njluX+HDwAmPE+6rh0V4fJ18fjfY77O6tePbCqr4RAoGBAKbGPGTbOF1/Ab+qglCI\nq2gtVLhCPIsLuQaJEzU6oTpu7KPOD1cbF7qaCpdVzY5w5EuP+Xlhhtnca2+mS4nH\nFLwLDBzegUsvwkdGSamEhgJyniJvifwQScS91BUXPHcebexR71frfIHbrfXkSddX\nFAKIRrJsfV3WKbe0lEMvRWIA\n-----END PRIVATE KEY-----\n",
+  "client_email": "jobflow-ai@ai-scheduler-agent-480118.iam.gserviceaccount.com",
+  "client_id": "110634529090227825167",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jobflow-ai%40ai-scheduler-agent-480118.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

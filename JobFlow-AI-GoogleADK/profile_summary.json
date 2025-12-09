@@ -1,0 +1,154 @@
+{
+  "name": "Farheen Akhter",
+  "current_role": "Applied AI/ML Engineer & Full-Stack Developer",
+  "location": "San Bernardino, CA, USA",
+  "experience_years": 8,
+  "summary": "Applied AI/ML Engineer with 8+ years of experience designing, building, and deploying deep learning and generative AI systems end-to-end. Strong in LLM fine-tuning, RAG architectures, and agentic workflows, with a research background in bias mitigation for LLMs (IEEE CAI 2025) and a track record of improving prediction accuracy, retrieval relevance, and real-world system performance.",
+  "education": [
+    {
+      "degree": "M.S. Computer Science and Engineering",
+      "institution": "California State University, San Bernardino",
+      "start": "2023-08",
+      "end": "2025-05",
+      "gpa": 3.9
+    },
+    {
+      "degree": "B.E. Information Technology",
+      "institution": "Jawaharlal Nehru Technological University (JNTU)",
+      "start": "2011-06",
+      "end": "2015-03",
+      "gpa": 3.4
+    }
+  ],
+  "skills": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "FastAPI",
+    "Django",
+    "Flask",
+    "Spring Boot",
+    "React",
+    "Tailwind CSS",
+    "Material UI",
+    "REST APIs",
+    "Microservices",
+    "Docker",
+    "Kubernetes",
+    "Cloud Run",
+    "GCP (Vertex AI, Dataflow, Pub/Sub)",
+    "Azure",
+    "AWS",
+    "PyTorch",
+    "TensorFlow / Keras",
+    "CNNs (ResNet, U-Net)",
+    "Vision Transformers",
+    "LSTMs",
+    "YOLO",
+    "Classical ML (XGBoost, Random Forest, SVM, k-Means, PCA, DBSCAN)",
+    "RAG (basic & advanced)",
+    "LLMs (OpenAI, Llama, Mistral)",
+    "LangChain",
+    "LangGraph",
+    "CrewAI",
+    "Agno",
+    "LlamaIndex",
+    "DSPy",
+    "Prompt Engineering",
+    "Hallucination Reduction",
+    "Fine-tuning (SFT)",
+    "RLHF / GRPO",
+    "MLOps (MLflow, Kubeflow, CI/CD)",
+    "Terraform",
+    "Prometheus",
+    "Grafana",
+    "NVIDIA NeMo (Curator, Guardrails)"
+  ],
+  "projects": [
+    {
+      "name": "AI Calendar Agent",
+      "description": "Personal productivity AI automation system that schedules a structured daily routine into Google Calendar, performs conflict detection and rescheduling, and exposes LLM-driven control via a FastAPI backend and React dashboard.",
+      "keywords": [
+        "LLM Agents",
+        "Google Calendar API",
+        "FastAPI",
+        "React",
+        "Scheduling",
+        "Productivity"
+      ]
+    },
+    {
+      "name": "Local RAG Ollama Assistant",
+      "description": "Local retrieval-augmented generation assistant built with Ollama and custom RAG pipelines to answer domain-specific questions with reduced hallucinations and improved retrieval relevance.",
+      "keywords": [
+        "RAG",
+        "Ollama",
+        "Semantic Search",
+        "LLMs"
+      ]
+    },
+    {
+      "name": "Grant Finder Agent",
+      "description": "LLM-powered grant discovery and recommendation system that semantically matches researcher profiles and projects to funding calls and assists with proposal drafting.",
+      "keywords": [
+        "LLM Agents",
+        "Information Retrieval",
+        "RAG"
+      ]
+    },
+    {
+      "name": "Vehicle Health Monitoring System",
+      "description": "Deep learning–based system using PyTorch to monitor and predict vehicle health status, with GPU-accelerated training and optimized inference pipelines.",
+      "keywords": [
+        "PyTorch",
+        "Deep Learning",
+        "Time Series"
+      ]
+    },
+    {
+      "name": "Glacier/Climate Multimodal Modeling",
+      "description": "CNN and Transformer-based multimodal models for glacier and climate data, deployed via Vertex AI Pipelines to support large-scale environmental forecasting.",
+      "keywords": [
+        "Multimodal",
+        "CNN",
+        "Transformers",
+        "Vertex AI",
+        "Pipelines"
+      ]
+    },
+    {
+      "name": "Pet Re-identification System",
+      "description": "Computer vision system using CNN embeddings and vector search to match lost and found pets from shelter images in real time.",
+      "keywords": [
+        "Computer Vision",
+        "CNN",
+        "Vector Search"
+      ]
+    }
+  ],
+  "research": [
+    {
+      "area": "Bias Mitigation in Instruction-Tuned LLMs",
+      "highlights": [
+        "IEEE CAI 2025 paper on bias mitigation techniques for LLMs.",
+        "Focus on bias calibration frameworks, healthcare NLP, and fairness-aware evaluation."
+      ]
+    },
+    {
+      "area": "Semantic Retrieval & RAG Quality",
+      "highlights": [
+        "Improved contextual retrieval relevance and reduced hallucinations via advanced RAG design.",
+        "Work on ranking, negative sampling, and synthetic data generation for retrieval tuning."
+      ]
+    }
+  ],
+  "interests": [
+    "LLM agents and tool-use",
+    "Retrieval-augmented generation (RAG)",
+    "MLOps and production ML systems",
+    "Geospatial and climate AI",
+    "Human-centered, bias-aware AI systems"
+  ]
+}
