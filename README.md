@@ -22,3 +22,24 @@ An AI-powered Calendar Agent that automatically manages my entire daily schedule
 <img width="1461" height="639" alt="Screenshot 2025-12-08 at 9 46 21 PM" src="https://github.com/user-attachments/assets/35876b40-acb5-4721-a17b-46a6f1f785fa" />
 
 Job Searh Co-Pilot AI is an intelligent career copilot built with Google ADK and Gemini models. It analyzes job descriptions, compares them to my skills and experience, identifies fit and gaps, and even generates tailored resume bullets and recruiter outreach messages. The agent uses tool-calling to parse job descriptions, load my profile, and automatically log job opportunities into a Google Sheets tracker—turning the job search into an automated, AI-driven workflow.
+
+## Multi Agent Clinician Knowledge Assistant
+
+
+
+A lightweight, privacy-preserving clinical information assistant built using LangGraph and local open-source LLMs (Ollama). The system uses a multi-agent workflow to answer medical knowledge questions safely and responsibly—without providing diagnosis or treatment advice.
+
+The assistant orchestrates four specialized agents:
+
+Triage Agent – routes the question to the appropriate specialists
+
+Literature Agent – retrieves and summarizes real PubMed studies
+
+Guideline Agent – performs RAG retrieval over local clinical guidelines using FAISS + HuggingFace embeddings
+
+Patient Educator Agent – generates simple, layperson-friendly explanations
+
+Synthesizer Agent – merges insights from all agents into a coherent, safety-guarded final response
+
+All processing runs locally using free models (e.g., llama3, mistral) and no proprietary APIs.
+The project demonstrates practical multi-agent design, tool integration, retrieval-augmented workflows, and clinically safe LLM prompting—ideal for research, education, or proving hands-on ability to build multi-agent systems.
