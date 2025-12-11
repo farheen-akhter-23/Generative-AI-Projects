@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+know-env/
+**/venv/
+
+# Node
+node_modules/
+**/node_modules/
+
+# Vector DBs / artifacts
+chroma_db/
+**/chroma_db/
+
+# OS
+.DS_Store
+
+# Secrets / credentials
+.env
+.env.*
+*.env
+credentials.json
+token.json
+**/credentials.json
+**/token.json
+*.pem
+*.key
