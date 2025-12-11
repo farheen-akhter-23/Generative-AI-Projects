@@ -26,6 +26,8 @@ Job Searh Co-Pilot AI is an intelligent career copilot built with Google ADK and
 ## Multi Agent Clinician Knowledge Assistant
 
 
+<img width="1470" height="883" alt="Screenshot 2025-12-10 at 9 27 11 PM" src="https://github.com/user-attachments/assets/bb951a59-f826-4339-a1da-6f750e0c0775" />
+
 
 A lightweight, privacy-preserving clinical information assistant built using LangGraph and local open-source LLMs (Ollama). The system uses a multi-agent workflow to answer medical knowledge questions safely and responsibly—without providing diagnosis or treatment advice.
 
